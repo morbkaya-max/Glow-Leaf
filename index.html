@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  background: #ffffff;
+  background: white;
   padding: 18px 5%;
   display: flex;
   justify-content: space-between;
@@ -113,7 +113,7 @@ nav button:hover {
 .serum {
   margin: 35px auto;
   max-width: 850px;
-  background: #fff;
+  background: white;
   border-radius: 22px;
   padding: 25px;
   display: flex;
@@ -219,12 +219,19 @@ h2.section-title {
   border-radius: 15px;
   padding: 18px;
   margin: 12px auto;
-  max-width: 700px;
+  max-width: 750px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
+  box-shadow: 0 3px 10px #00000008;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .quantity button {
@@ -232,10 +239,25 @@ h2.section-title {
   background: #e1f1dc;
   color: #245b32;
   border-radius: 8px;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   font-size: 18px;
   cursor: pointer;
+}
+
+.delete-btn {
+  background: #ffe6e6;
+  color: #c62828;
+  border: none;
+  border-radius: 20px;
+  padding: 9px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background: #ffcaca;
 }
 
 .total {
@@ -264,13 +286,16 @@ footer {
     justify-content: center;
     gap: 12px;
   }
+
   nav {
     justify-content: center;
     flex-wrap: wrap;
   }
+
   .hero h1 {
     font-size: 32px;
   }
+
   .serum-info {
     text-align: center;
   }
@@ -282,6 +307,7 @@ footer {
 
 <header>
   <div class="logo">PURE LEAF</div>
+
   <nav>
     <button onclick="showPage('home')">Home</button>
     <button onclick="showPage('products')">Products</button>
@@ -292,6 +318,7 @@ footer {
 </header>
 
 <!-- HOME PAGE -->
+
 <section id="home" class="page active">
 
   <div class="hero">
@@ -305,22 +332,41 @@ footer {
 
     <svg class="serum-art" viewBox="0 0 240 260"
          xmlns="http://www.w3.org/2000/svg">
+
       <ellipse cx="120" cy="242" rx="75" ry="10" fill="#d8dfce"/>
-      <rect x="91" y="20" width="58" height="45" rx="8" fill="#315b37"/>
-      <rect x="108" y="5" width="24" height="22" rx="5" fill="#203e28"/>
-      <rect x="78" y="58" width="84" height="165" rx="18"
-            fill="#f6c75e" stroke="#b28a35" stroke-width="3"/>
-      <rect x="85" y="75" width="70" height="135" rx="12"
-            fill="#fff9df"/>
-      <text x="120" y="116" font-size="12" text-anchor="middle"
-            fill="#28643b" font-weight="bold">PURE LEAF</text>
-      <text x="120" y="142" font-size="12" text-anchor="middle"
-            fill="#d18b19" font-weight="bold">VITAMIN C</text>
-      <text x="120" y="158" font-size="11" text-anchor="middle"
-            fill="#d18b19">SERUM</text>
+
+      <rect x="91" y="20" width="58" height="45"
+        rx="8" fill="#315b37"/>
+
+      <rect x="108" y="5" width="24" height="22"
+        rx="5" fill="#203e28"/>
+
+      <rect x="78" y="58" width="84" height="165"
+        rx="18" fill="#f6c75e" stroke="#b28a35" stroke-width="3"/>
+
+      <rect x="85" y="75" width="70" height="135"
+        rx="12" fill="#fff9df"/>
+
+      <text x="120" y="116" font-size="12"
+        text-anchor="middle" fill="#28643b" font-weight="bold">
+        PURE LEAF
+      </text>
+
+      <text x="120" y="142" font-size="12"
+        text-anchor="middle" fill="#d18b19" font-weight="bold">
+        VITAMIN C
+      </text>
+
+      <text x="120" y="158" font-size="11"
+        text-anchor="middle" fill="#d18b19">
+        SERUM
+      </text>
+
       <circle cx="120" cy="182" r="13" fill="#f5b52d"/>
+
       <path d="M120 168 Q125 156 136 163 Q132 174 120 172"
-            fill="#5a9a49"/>
+        fill="#5a9a49"/>
+
     </svg>
 
     <div class="serum-info">
@@ -328,9 +374,11 @@ footer {
       <p>Meet our upcoming PURE LEAF Vitamin C Serum. A new skincare favourite is on its way!</p>
       <span class="coming">COMING SOON</span>
     </div>
+
   </div>
 
   <h2 class="section-title">Discover Our Face Wash Collection</h2>
+
   <p style="text-align:center">
     Ten colourful choices for your everyday skincare routine.
   </p>
@@ -338,22 +386,35 @@ footer {
 </section>
 
 <!-- PRODUCTS PAGE -->
+
 <section id="products" class="page">
+
   <h2 class="section-title">Our Face Wash Collection</h2>
+
   <div class="products" id="productList"></div>
+
 </section>
 
 <!-- CART PAGE -->
+
 <section id="cart" class="page">
+
   <h2 class="section-title">Your Shopping Cart</h2>
+
   <div id="cartItems"></div>
+
   <div class="total" id="cartTotal">Total: ₹0</div>
+
   <div style="text-align:center">
+
     <button class="green-btn" onclick="buyNow()">Buy Now</button>
+
     <button class="green-btn" onclick="showPage('products')">
       Continue Shopping
     </button>
+
   </div>
+
 </section>
 
 <footer>
@@ -367,31 +428,21 @@ footer {
 // PRODUCT INFORMATION
 
 const products = [
-  {name:"Charcoal Face Wash", ingredient:"Charcoal pieces",
-   price:199, type:"charcoal", color:"#b8b8b8"},
-  {name:"Lemon Face Wash", ingredient:"Fresh lemons",
-   price:199, type:"lemon", color:"#f9df4b"},
-  {name:"Daily Face Wash", ingredient:"Everyday freshness",
-   price:179, type:"daily", color:"#b9d8ef"},
-  {name:"Vitamin C Face Wash", ingredient:"Fresh citrus fruits",
-   price:219, type:"vitamin", color:"#ffb347"},
-  {name:"Aloe Vera Face Wash", ingredient:"Aloe vera leaves",
-   price:199, type:"aloe", color:"#86bd70"},
-  {name:"Lichi Face Wash", ingredient:"Sweet pink lichis",
-   price:199, type:"lichi", color:"#f4a0ad"},
-  {name:"Pineapple Face Wash", ingredient:"Fresh pineapple",
-   price:199, type:"pineapple", color:"#f5c94f"},
-  {name:"Orange Face Wash", ingredient:"Juicy oranges",
-   price:199, type:"orange", color:"#ff9c35"},
-  {name:"Mint Face Wash", ingredient:"Mint and tulsi leaves",
-   price:199, type:"mint", color:"#80bd86"},
-  {name:"Turmeric Face Wash", ingredient:"Turmeric root",
-   price:199, type:"turmeric", color:"#e8b23e"}
+  {name:"Charcoal Face Wash", ingredient:"Charcoal pieces", price:199, type:"charcoal", color:"#b8b8b8"},
+  {name:"Lemon Face Wash", ingredient:"Fresh lemons", price:199, type:"lemon", color:"#f9df4b"},
+  {name:"Daily Face Wash", ingredient:"Everyday freshness", price:179, type:"daily", color:"#b9d8ef"},
+  {name:"Vitamin C Face Wash", ingredient:"Fresh citrus fruits", price:219, type:"vitamin", color:"#ffb347"},
+  {name:"Aloe Vera Face Wash", ingredient:"Aloe vera leaves", price:199, type:"aloe", color:"#86bd70"},
+  {name:"Lichi Face Wash", ingredient:"Sweet pink lichis", price:199, type:"lichi", color:"#f4a0ad"},
+  {name:"Pineapple Face Wash", ingredient:"Fresh pineapple", price:199, type:"pineapple", color:"#f5c94f"},
+  {name:"Orange Face Wash", ingredient:"Juicy oranges", price:199, type:"orange", color:"#ff9c35"},
+  {name:"Mint Face Wash", ingredient:"Mint and tulsi leaves", price:199, type:"mint", color:"#80bd86"},
+  {name:"Turmeric Face Wash", ingredient:"Turmeric root", price:199, type:"turmeric", color:"#e8b23e"}
 ];
 
 let cart = JSON.parse(localStorage.getItem("pureLeafCart") || "[]");
 
-// DRAWING PICTURES DIRECTLY IN HTML
+// DRAW INGREDIENT PICTURES
 
 function ingredientDrawing(type) {
 
@@ -489,12 +540,13 @@ function ingredientDrawing(type) {
         M69 153 L82 166"
         stroke="#f4c65d" stroke-width="3"/>
     `
+
   };
 
   return drawings[type] || "";
 }
 
-// DRAW A PURE LEAF BOTTLE WITH INGREDIENTS
+// DRAW PRODUCT BOTTLES
 
 function productPicture(product) {
 
@@ -546,7 +598,7 @@ function productPicture(product) {
   </svg>`;
 }
 
-// SHOW ALL PRODUCTS
+// DISPLAY PRODUCTS
 
 function displayProducts() {
 
@@ -590,13 +642,16 @@ function addToCart(index) {
   }
 
   saveCart();
+
   alert(product.name + " added to your cart!");
 }
 
 // SAVE CART
 
 function saveCart() {
+
   localStorage.setItem("pureLeafCart", JSON.stringify(cart));
+
   updateCartCount();
   displayCart();
 }
@@ -604,7 +659,9 @@ function saveCart() {
 // CART COUNT
 
 function updateCartCount() {
+
   let count = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   document.getElementById("cartCount").textContent = count;
 }
 
@@ -616,12 +673,14 @@ function displayCart() {
   const totalElement = document.getElementById("cartTotal");
 
   if (cart.length === 0) {
+
     container.innerHTML = `
       <div class="empty">
         <h2>Your cart is empty!</h2>
         <p>Add some PURE LEAF products to get started.</p>
       </div>
     `;
+
     totalElement.textContent = "Total: ₹0";
     return;
   }
@@ -641,15 +700,25 @@ function displayCart() {
         </div>
 
         <div class="quantity">
+
           <button onclick="changeQuantity(${index}, -1)">−</button>
-          <strong style="padding:10px">${item.quantity}</strong>
+
+          <strong>${item.quantity}</strong>
+
           <button onclick="changeQuantity(${index}, 1)">+</button>
+
         </div>
 
         <strong>₹${item.price * item.quantity}</strong>
 
+        <button class="delete-btn"
+          onclick="deleteProduct(${index})">
+          🗑 Delete
+        </button>
+
       </div>
     `;
+
   }).join("");
 
   totalElement.textContent = "Total: ₹" + total;
@@ -666,6 +735,25 @@ function changeQuantity(index, amount) {
   }
 
   saveCart();
+}
+
+// DELETE PRODUCT COMPLETELY FROM CART
+
+function deleteProduct(index) {
+
+  const productName = cart[index].name;
+
+  const confirmDelete = confirm(
+    "Are you sure you want to delete " + productName + " from your cart?"
+  );
+
+  if (confirmDelete) {
+
+    cart.splice(index, 1);
+
+    saveCart();
+
+  }
 }
 
 // NAVIGATION
@@ -690,11 +778,15 @@ function showPage(page) {
 function buyNow() {
 
   if (cart.length === 0) {
+
     alert("Your cart is empty! Please add a product first.");
+
     return;
   }
 
-  alert("Thank you for shopping with PURE LEAF! This is a demo website. Online payments are not connected yet.");
+  alert(
+    "Thank you for shopping with PURE LEAF! This is a demo website. Online payments are not connected yet."
+  );
 }
 
 // START WEBSITE
