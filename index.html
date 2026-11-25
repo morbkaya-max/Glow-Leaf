@@ -4,321 +4,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PURE LEAF | Natural Skincare</title>
+<title>PURE LEAF | Everyday Natural Skincare</title>
 
 <style>
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f8faf5;
-    color: #243b2a;
+  background: #f7fbf4;
+  color: #24452d;
 }
 
 header {
-    background: white;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 2px 12px #00000010;
+  background: #ffffff;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px #00000010;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
-    font-size: 27px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    color: #315b3b;
+  font-size: 27px;
+  font-weight: bold;
+  color: #28643b;
+  letter-spacing: 2px;
 }
 
-.logo span {
-    color: #91a77d;
+nav {
+  display: flex;
+  gap: 10px;
 }
 
 nav button {
-    background: none;
-    border: none;
-    font-size: 15px;
-    margin-left: 18px;
-    cursor: pointer;
-    color: #315b3b;
-    font-weight: bold;
+  border: none;
+  background: transparent;
+  color: #285b36;
+  padding: 10px 13px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 20px;
 }
 
 nav button:hover {
-    color: #9aaf70;
+  background: #e2f2dc;
+}
+
+#cartCount {
+  background: #2e753f;
+  color: white;
+  border-radius: 20px;
+  padding: 3px 8px;
 }
 
 .page {
-    display: none;
+  display: none;
+  padding: 30px 5%;
+  min-height: 75vh;
 }
 
 .page.active {
-    display: block;
+  display: block;
 }
-
-/* HOME BANNER */
 
 .hero {
-    min-height: 440px;
-    background: linear-gradient(90deg, #e5efdf, #f5f6ed);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 45px 8%;
-    gap: 30px;
-}
-
-.hero-content {
-    max-width: 470px;
+  background: linear-gradient(120deg, #e1f3d9, #fff5d9);
+  border-radius: 25px;
+  padding: 45px 25px;
+  text-align: center;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
-    color: #315b3b;
+  font-size: 42px;
+  color: #27643a;
+  margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 22px;
+  font-size: 17px;
+  margin: 12px auto;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
-.hero img {
-    width: 40%;
-    max-width: 380px;
-    height: 330px;
-    object-fit: cover;
-    border-radius: 20px;
+.hero button, .green-btn {
+  background: #347a43;
+  color: white;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 15px;
 }
 
-.main-btn {
-    background: #426b49;
-    color: white;
-    padding: 14px 27px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 15px;
+.hero button:hover, .green-btn:hover {
+  background: #205a30;
 }
 
-.main-btn:hover {
-    background: #294d32;
+.serum {
+  margin: 35px auto;
+  max-width: 850px;
+  background: #fff;
+  border-radius: 22px;
+  padding: 25px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px #00000010;
 }
 
-/* PRODUCTS */
-
-.section {
-    padding: 55px 7%;
+.serum-art {
+  width: 220px;
+  max-width: 100%;
 }
 
-.section h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 12px;
+.serum-info {
+  text-align: left;
+  max-width: 400px;
 }
 
-.subtitle {
-    text-align: center;
-    color: #758575;
-    margin-bottom: 35px;
+.serum-info h2 {
+  color: #347a43;
+  margin-bottom: 12px;
+}
+
+.coming {
+  display: inline-block;
+  background: #fff0bd;
+  color: #865c00;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+h2.section-title {
+  text-align: center;
+  margin: 25px 0;
+  color: #28643b;
+  font-size: 30px;
 }
 
 .products {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 23px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
 }
 
-.product {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 4px 15px #0000000c;
-    padding-bottom: 20px;
-    transition: 0.3s;
+.product-card {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 14px #0000000d;
+  transition: transform .2s;
 }
 
-.product:hover {
-    transform: translateY(-5px);
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
-.product img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
+.product-art {
+  width: 100%;
+  height: 190px;
+  background: #f0f6e9;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
-.product h3 {
-    margin: 15px 5px 8px;
-    font-size: 19px;
+.product-card h3 {
+  color: #28643b;
+  margin-bottom: 8px;
 }
 
-.product p {
-    color: #70816d;
-    margin-bottom: 13px;
-    font-size: 14px;
+.product-card p {
+  color: #617363;
+  font-size: 14px;
+  min-height: 35px;
 }
 
 .price {
-    font-size: 19px;
-    font-weight: bold;
-    margin-bottom: 13px;
+  font-weight: bold;
+  font-size: 19px;
+  margin: 12px;
+  color: #284d31;
 }
 
-.add-btn {
-    background: #426b49;
-    color: white;
-    border: none;
-    padding: 11px 22px;
-    border-radius: 22px;
-    cursor: pointer;
+.product-card button {
+  background: #347a43;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 11px 20px;
+  cursor: pointer;
 }
 
-.add-btn:hover {
-    background: #294d32;
-}
-
-/* CART */
-
-.cart-section {
-    padding: 55px 7%;
-    min-height: 75vh;
-}
-
-.cart-section h1 {
-    text-align: center;
-    margin-bottom: 30px;
+.product-card button:hover {
+  background: #205a30;
 }
 
 .cart-item {
-    background: white;
-    padding: 17px;
-    margin-bottom: 15px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    box-shadow: 0 3px 12px #0000000a;
-}
-
-.cart-item img {
-    width: 85px;
-    height: 85px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.cart-info {
-    flex: 1;
-}
-
-.cart-info h3 {
-    margin-bottom: 8px;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  background: white;
+  border-radius: 15px;
+  padding: 18px;
+  margin: 12px auto;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .quantity button {
-    width: 30px;
-    height: 30px;
-    background: #e7efdf;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 19px;
+  border: none;
+  background: #e1f1dc;
+  color: #245b32;
+  border-radius: 8px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .total {
-    text-align: right;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 25px 0;
-}
-
-.buy-btn {
-    display: block;
-    margin-left: auto;
-    background: #426b49;
-    color: white;
-    border: none;
-    padding: 15px 45px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 17px;
+  text-align: center;
+  font-size: 24px;
+  margin: 25px;
+  font-weight: bold;
 }
 
 .empty {
-    text-align: center;
-    padding: 50px;
-    color: #788b78;
+  text-align: center;
+  padding: 50px 10px;
+  color: #718675;
 }
 
 footer {
+  text-align: center;
+  background: #e5f1df;
+  padding: 25px;
+  margin-top: 30px;
+  color: #42634a;
+}
+
+@media(max-width:600px) {
+  header {
+    justify-content: center;
+    gap: 12px;
+  }
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
+  .serum-info {
     text-align: center;
-    padding: 30px;
-    background: #e9efe3;
-    color: #426b49;
-}
-
-@media(max-width: 850px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero img {
-        width: 90%;
-    }
-}
-
-@media(max-width: 500px) {
-    header {
-        padding: 15px 4%;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    nav button {
-        margin-left: 7px;
-        font-size: 13px;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    .products {
-        gap: 12px;
-    }
-
-    .product img {
-        height: 145px;
-    }
-
-    .cart-item {
-        flex-wrap: wrap;
-    }
+  }
 }
 </style>
 </head>
@@ -326,373 +281,420 @@ footer {
 <body>
 
 <header>
-    <div class="logo">PURE <span>LEAF</span></div>
-
-    <nav>
-        <button onclick="showPage('home')">Home</button>
-        <button onclick="showPage('home')">Products</button>
-        <button onclick="showPage('cart')">
-            Cart 🛒 (<span id="cart-count">0</span>)
-        </button>
-    </nav>
+  <div class="logo">PURE LEAF</div>
+  <nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('products')">Products</button>
+    <button onclick="showPage('cart')">
+      View Cart <span id="cartCount">0</span>
+    </button>
+  </nav>
 </header>
 
 <!-- HOME PAGE -->
+<section id="home" class="page active">
 
-<div id="home" class="page active">
+  <div class="hero">
+    <h1>PURE LEAF</h1>
+    <p>DESIGNED FOR EVERYDAY SKIN</p>
+    <p>Discover a fresh and happy skincare experience with PURE LEAF face washes.</p>
+    <button onclick="showPage('products')">Explore Products</button>
+  </div>
 
-<section class="hero">
+  <div class="serum">
 
-    <div class="hero-content">
-        <h1>Nature's Care, One Drop at a Time.</h1>
+    <svg class="serum-art" viewBox="0 0 240 260"
+         xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="120" cy="242" rx="75" ry="10" fill="#d8dfce"/>
+      <rect x="91" y="20" width="58" height="45" rx="8" fill="#315b37"/>
+      <rect x="108" y="5" width="24" height="22" rx="5" fill="#203e28"/>
+      <rect x="78" y="58" width="84" height="165" rx="18"
+            fill="#f6c75e" stroke="#b28a35" stroke-width="3"/>
+      <rect x="85" y="75" width="70" height="135" rx="12"
+            fill="#fff9df"/>
+      <text x="120" y="116" font-size="12" text-anchor="middle"
+            fill="#28643b" font-weight="bold">PURE LEAF</text>
+      <text x="120" y="142" font-size="12" text-anchor="middle"
+            fill="#d18b19" font-weight="bold">VITAMIN C</text>
+      <text x="120" y="158" font-size="11" text-anchor="middle"
+            fill="#d18b19">SERUM</text>
+      <circle cx="120" cy="182" r="13" fill="#f5b52d"/>
+      <path d="M120 168 Q125 156 136 163 Q132 174 120 172"
+            fill="#5a9a49"/>
+    </svg>
 
-        <p>
-        Discover our NEW liquid dropper moisturizer!
-        No need for big moisturizer bottles.
-        Simply take a few drops and gently apply
-        them to your face.
-        </p>
-
-        <button class="main-btn"
-        onclick="showPage('home')">
-        Discover Our Collection
-        </button>
+    <div class="serum-info">
+      <h2>Something Fresh is Coming!</h2>
+      <p>Meet our upcoming PURE LEAF Vitamin C Serum. A new skincare favourite is on its way!</p>
+      <span class="coming">COMING SOON</span>
     </div>
+  </div>
 
-    <img
-    src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800"
-    alt="Pure Leaf dropper moisturizer">
-
-</section>
-
-<section class="section">
-
-    <h2>Our Face Wash Collection</h2>
-
-    <p class="subtitle">
-    Find your favourite face wash with PURE LEAF.
-    </p>
-
-    <div class="products" id="product-list"></div>
+  <h2 class="section-title">Discover Our Face Wash Collection</h2>
+  <p style="text-align:center">
+    Ten colourful choices for your everyday skincare routine.
+  </p>
 
 </section>
 
-</div>
+<!-- PRODUCTS PAGE -->
+<section id="products" class="page">
+  <h2 class="section-title">Our Face Wash Collection</h2>
+  <div class="products" id="productList"></div>
+</section>
 
 <!-- CART PAGE -->
-
-<div id="cart" class="page">
-
-<section class="cart-section">
-
-    <h1>My Shopping Cart 🛒</h1>
-
-    <div id="cart-items"></div>
-
-    <div id="cart-total" class="total"></div>
-
-    <button class="buy-btn"
-    onclick="buyNow()">
-    BUY NOW →
+<section id="cart" class="page">
+  <h2 class="section-title">Your Shopping Cart</h2>
+  <div id="cartItems"></div>
+  <div class="total" id="cartTotal">Total: ₹0</div>
+  <div style="text-align:center">
+    <button class="green-btn" onclick="buyNow()">Buy Now</button>
+    <button class="green-btn" onclick="showPage('products')">
+      Continue Shopping
     </button>
-
+  </div>
 </section>
 
-</div>
-
 <footer>
-    <h2>PURE LEAF 🌿</h2>
-    <p>Natural Beauty. Everyday Confidence.</p>
-    <p>© 2026 PURE LEAF. All Rights Reserved.</p>
+  <h3>PURE LEAF</h3>
+  <p>Designed for Everyday Skin</p>
+  <p>Fresh skincare, happy skin!</p>
 </footer>
 
 <script>
 
-// PRODUCT COLLECTION
+// PRODUCT INFORMATION
 
 const products = [
-{
-    id: 1,
-    name: "Charcoal Face Wash",
-    price: 199,
-    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=500",
-    description: "Charcoal-inspired cleansing care"
-},
-{
-    id: 2,
-    name: "Lemon Face Wash",
-    price: 179,
-    image: "https://images.unsplash.com/photo-1590502593747-42a996133562?w=500",
-    description: "Fresh lemon-inspired care"
-},
-{
-    id: 3,
-    name: "Daily Face Wash",
-    price: 149,
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500",
-    description: "Everyday cleansing care"
-},
-{
-    id: 4,
-    name: "Vitamin C Face Wash",
-    price: 199,
-    image: "https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?w=500",
-    description: "Vitamin C-inspired glow care"
-},
-{
-    id: 5,
-    name: "Aloe Vera Face Wash",
-    price: 179,
-    image: "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500",
-    description: "Aloe-inspired soothing care"
-},
-{
-    id: 6,
-    name: "Lichi Face Wash",
-    price: 179,
-    image: "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=500",
-    description: "Lichi-inspired refreshing care"
-},
-{
-    id: 7,
-    name: "Pineapple Face Wash",
-    price: 179,
-    image: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=500",
-    description: "Pineapple-inspired fresh care"
-},
-{
-    id: 8,
-    name: "Orange Face Wash",
-    price: 179,
-    image: "https://images.unsplash.com/photo-1547514701-42782101795e?w=500",
-    description: "Orange-inspired daily freshness"
-},
-{
-    id: 9,
-    name: "Mint Face Wash",
-    price: 179,
-    image: "https://images.unsplash.com/photo-1628556270448-4d4e4148e1b1?w=500",
-    description: "Mint-inspired cooling care"
-},
-{
-    id: 10,
-    name: "Turmeric Face Wash",
-    price: 179,
-    image: "https://images.unsplash.com/photo-1615485500704-8e990f9900f0?w=500",
-    description: "Turmeric-inspired skincare"
-}
+  {name:"Charcoal Face Wash", ingredient:"Charcoal pieces",
+   price:199, type:"charcoal", color:"#b8b8b8"},
+  {name:"Lemon Face Wash", ingredient:"Fresh lemons",
+   price:199, type:"lemon", color:"#f9df4b"},
+  {name:"Daily Face Wash", ingredient:"Everyday freshness",
+   price:179, type:"daily", color:"#b9d8ef"},
+  {name:"Vitamin C Face Wash", ingredient:"Fresh citrus fruits",
+   price:219, type:"vitamin", color:"#ffb347"},
+  {name:"Aloe Vera Face Wash", ingredient:"Aloe vera leaves",
+   price:199, type:"aloe", color:"#86bd70"},
+  {name:"Lichi Face Wash", ingredient:"Sweet pink lichis",
+   price:199, type:"lichi", color:"#f4a0ad"},
+  {name:"Pineapple Face Wash", ingredient:"Fresh pineapple",
+   price:199, type:"pineapple", color:"#f5c94f"},
+  {name:"Orange Face Wash", ingredient:"Juicy oranges",
+   price:199, type:"orange", color:"#ff9c35"},
+  {name:"Mint Face Wash", ingredient:"Mint and tulsi leaves",
+   price:199, type:"mint", color:"#80bd86"},
+  {name:"Turmeric Face Wash", ingredient:"Turmeric root",
+   price:199, type:"turmeric", color:"#e8b23e"}
 ];
 
-// SAVE CART
+let cart = JSON.parse(localStorage.getItem("pureLeafCart") || "[]");
 
-let cart = JSON.parse(
-    localStorage.getItem("pureLeafCart")
-) || [];
+// DRAWING PICTURES DIRECTLY IN HTML
 
-// DISPLAY PRODUCTS
+function ingredientDrawing(type) {
+
+  let drawings = {
+
+    charcoal: `
+      <path d="M25 145 L42 110 L68 120 L63 153 Z" fill="#343434"/>
+      <path d="M65 160 L82 122 L108 135 L96 168 Z" fill="#555"/>
+      <path d="M33 105 L44 88 L64 98 L55 115 Z" fill="#777"/>
+    `,
+
+    lemon: `
+      <ellipse cx="48" cy="142" rx="29" ry="19"
+        transform="rotate(-25 48 142)" fill="#f4d52f"/>
+      <ellipse cx="105" cy="158" rx="28" ry="18"
+        transform="rotate(20 105 158)" fill="#ffe65a"/>
+      <path d="M45 120 Q53 106 65 111 Q57 125 45 120"
+        fill="#4d913d"/>
+    `,
+
+    daily: `
+      <rect x="22" y="93" width="105" height="75" rx="5"
+        fill="#a9c8d4" stroke="#698d9c" stroke-width="5"/>
+      <path d="M35 105 L110 105 L110 155 L35 155 Z"
+        fill="#e5f2f5"/>
+      <circle cx="72" cy="128" r="15" fill="#ffffff"/>
+      <path d="M30 170 Q72 160 120 170" fill="none"
+        stroke="#8c6848" stroke-width="4"/>
+    `,
+
+    vitamin: `
+      <circle cx="45" cy="143" r="26" fill="#ff9d25"/>
+      <circle cx="45" cy="143" r="17" fill="#ffe8a1"/>
+      <path d="M45 126 L45 160 M28 143 L62 143
+        M33 131 L57 155 M57 131 L33 155"
+        stroke="#f2a52c" stroke-width="3"/>
+      <circle cx="105" cy="158" r="19" fill="#ffb72d"/>
+    `,
+
+    aloe: `
+      <path d="M65 174 Q10 95 38 74 Q70 100 65 174"
+        fill="#69a94e" stroke="#367c37" stroke-width="3"/>
+      <path d="M70 174 Q45 80 75 55 Q100 105 70 174"
+        fill="#8bc96d" stroke="#367c37" stroke-width="3"/>
+      <path d="M75 174 Q90 80 112 82 Q117 125 75 174"
+        fill="#5a9d47" stroke="#367c37" stroke-width="3"/>
+    `,
+
+    lichi: `
+      <circle cx="45" cy="142" r="25" fill="#e77b89"/>
+      <circle cx="91" cy="149" r="24" fill="#f19ba4"/>
+      <circle cx="69" cy="116" r="21" fill="#d95c72"/>
+      <path d="M68 96 Q75 77 91 83 Q82 99 68 96"
+        fill="#528b42"/>
+    `,
+
+    pineapple: `
+      <path d="M65 104 Q34 75 50 58 Q68 72 69 100
+        Q70 50 90 48 Q99 75 75 104
+        Q111 63 120 82 Q109 104 79 116"
+        fill="#4d9744"/>
+      <ellipse cx="75" cy="145" rx="30" ry="45"
+        fill="#edbd39" stroke="#b78b21" stroke-width="3"/>
+      <path d="M53 118 L96 169 M48 139 L100 151
+        M57 162 L91 120 M50 145 L95 135"
+        stroke="#b28a26" stroke-width="3"/>
+    `,
+
+    orange: `
+      <circle cx="50" cy="143" r="28" fill="#ff982a"/>
+      <circle cx="102" cy="151" r="25" fill="#f9a12f"/>
+      <path d="M50 115 Q55 100 68 105 Q61 119 50 115"
+        fill="#4b9446"/>
+      <circle cx="50" cy="143" r="17" fill="#ffbd56"/>
+    `,
+
+    mint: `
+      <path d="M65 165 Q5 122 28 94 Q70 98 65 165"
+        fill="#63ae70" stroke="#367e48" stroke-width="3"/>
+      <path d="M70 165 Q44 89 76 68 Q101 104 70 165"
+        fill="#83c68b" stroke="#367e48" stroke-width="3"/>
+      <path d="M76 165 Q94 103 121 107 Q116 143 76 165"
+        fill="#5a9d64" stroke="#367e48" stroke-width="3"/>
+      <path d="M65 165 L28 94 M70 165 L76 68 M76 165 L121 107"
+        stroke="#397e46" stroke-width="2"/>
+    `,
+
+    turmeric: `
+      <path d="M35 142 Q42 119 62 132 L78 115
+        Q94 109 98 126 L82 145 L105 158
+        Q108 177 89 174 L68 157 L49 170
+        Q29 167 35 142"
+        fill="#d99520" stroke="#a76a12" stroke-width="3"/>
+      <path d="M40 138 L53 140 M70 127 L79 138
+        M69 153 L82 166"
+        stroke="#f4c65d" stroke-width="3"/>
+    `
+  };
+
+  return drawings[type] || "";
+}
+
+// DRAW A PURE LEAF BOTTLE WITH INGREDIENTS
+
+function productPicture(product) {
+
+  return `
+  <svg class="product-art" viewBox="0 0 160 200"
+       xmlns="http://www.w3.org/2000/svg">
+
+    <rect x="0" y="0" width="160" height="200"
+      rx="15" fill="#f2eadb"/>
+
+    <rect x="0" y="155" width="160" height="45"
+      fill="#b58b60"/>
+
+    <path d="M0 166 Q40 158 80 165 T160 164"
+      fill="none" stroke="#926b45" stroke-width="2"/>
+
+    ${ingredientDrawing(product.type)}
+
+    <ellipse cx="124" cy="177" rx="25" ry="6"
+      fill="#795a3a" opacity=".3"/>
+
+    <rect x="110" y="70" width="28" height="15"
+      rx="3" fill="#345b38"/>
+
+    <rect x="105" y="82" width="38" height="88"
+      rx="9" fill="${product.color}"
+      stroke="#ffffff" stroke-width="2"/>
+
+    <rect x="110" y="99" width="28" height="50"
+      rx="4" fill="#ffffff"/>
+
+    <text x="124" y="112" font-size="5.5"
+      text-anchor="middle" fill="#28643b"
+      font-weight="bold">PURE LEAF</text>
+
+    <path d="M117 124 Q123 113 129 124 Q123 135 117 124"
+      fill="#65a84f"/>
+
+    <text x="124" y="140" font-size="5"
+      text-anchor="middle" fill="#315b37">FACE WASH</text>
+
+    <text x="124" y="146" font-size="4"
+      text-anchor="middle" fill="#315b37">100 ml</text>
+
+    <text x="80" y="190" font-size="7"
+      text-anchor="middle" fill="#ffffff"
+      font-weight="bold">PURE LEAF</text>
+
+  </svg>`;
+}
+
+// SHOW ALL PRODUCTS
 
 function displayProducts() {
 
-    const list = document.getElementById("product-list");
+  const list = document.getElementById("productList");
 
-    list.innerHTML = products.map(product => `
+  list.innerHTML = products.map((product, index) => `
+    <div class="product-card">
 
-        <div class="product">
+      ${productPicture(product)}
 
-            <img src="${product.image}"
-            alt="${product.name}"
-            loading="lazy">
+      <h3>${product.name}</h3>
 
-            <h3>${product.name}</h3>
+      <p>${product.ingredient}</p>
 
-            <p>${product.description}</p>
+      <div class="price">₹${product.price}</div>
 
-            <div class="price">₹${product.price}</div>
+      <button onclick="addToCart(${index})">
+        Add to Cart
+      </button>
 
-            <button class="add-btn"
-            onclick="addToCart(${product.id})">
-            Add to Cart +
-            </button>
-
-        </div>
-
-    `).join("");
+    </div>
+  `).join("");
 }
 
 // ADD TO CART
 
-function addToCart(id) {
+function addToCart(index) {
 
-    let item = cart.find(p => p.id === id);
+  const product = products[index];
 
-    if(item) {
-        item.quantity++;
-    } else {
-        cart.push({
-            id: id,
-            quantity: 1
-        });
-    }
+  const existing = cart.find(item => item.name === product.name);
 
-    saveCart();
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({
+      name: product.name,
+      price: product.price,
+      quantity: 1
+    });
+  }
 
-    alert("Product added to your cart! 🌿");
+  saveCart();
+  alert(product.name + " added to your cart!");
 }
 
-// SAVE CART FUNCTION
+// SAVE CART
 
 function saveCart() {
-
-    localStorage.setItem(
-        "pureLeafCart",
-        JSON.stringify(cart)
-    );
-
-    updateCartCount();
-    displayCart();
+  localStorage.setItem("pureLeafCart", JSON.stringify(cart));
+  updateCartCount();
+  displayCart();
 }
 
 // CART COUNT
 
 function updateCartCount() {
-
-    let count = cart.reduce(
-        (sum, item) => sum + item.quantity, 0
-    );
-
-    document.getElementById("cart-count")
-    .innerText = count;
+  let count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  document.getElementById("cartCount").textContent = count;
 }
 
 // DISPLAY CART
 
 function displayCart() {
 
-    const container =
-    document.getElementById("cart-items");
+  const container = document.getElementById("cartItems");
+  const totalElement = document.getElementById("cartTotal");
 
-    const totalElement =
-    document.getElementById("cart-total");
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="empty">
+        <h2>Your cart is empty!</h2>
+        <p>Add some PURE LEAF products to get started.</p>
+      </div>
+    `;
+    totalElement.textContent = "Total: ₹0";
+    return;
+  }
 
-    if(cart.length === 0) {
+  let total = 0;
 
-        container.innerHTML = `
-        <div class="empty">
-            <h2>Your cart is empty 🌿</h2>
-            <p>Let's find something beautiful for your skin!</p>
-        </div>`;
+  container.innerHTML = cart.map((item, index) => {
 
-        totalElement.innerText = "";
+    total += item.price * item.quantity;
 
-        return;
-    }
+    return `
+      <div class="cart-item">
 
-    let total = 0;
-
-    container.innerHTML = cart.map(item => {
-
-        let product = products.find(
-            p => p.id === item.id
-        );
-
-        let subtotal = product.price * item.quantity;
-
-        total += subtotal;
-
-        return `
-
-        <div class="cart-item">
-
-            <img src="${product.image}"
-            alt="${product.name}">
-
-            <div class="cart-info">
-                <h3>${product.name}</h3>
-                <p>₹${product.price} each</p>
-                <p>Subtotal: ₹${subtotal}</p>
-            </div>
-
-            <div class="quantity">
-
-                <button onclick="changeQuantity(
-                    ${item.id}, -1
-                )">−</button>
-
-                <strong>${item.quantity}</strong>
-
-                <button onclick="changeQuantity(
-                    ${item.id}, 1
-                )">+</button>
-
-            </div>
-
+        <div>
+          <h3>${item.name}</h3>
+          <p>₹${item.price} each</p>
         </div>
 
-        `;
+        <div class="quantity">
+          <button onclick="changeQuantity(${index}, -1)">−</button>
+          <strong style="padding:10px">${item.quantity}</strong>
+          <button onclick="changeQuantity(${index}, 1)">+</button>
+        </div>
 
-    }).join("");
+        <strong>₹${item.price * item.quantity}</strong>
 
-    totalElement.innerText =
-    "Total: ₹" + total;
+      </div>
+    `;
+  }).join("");
+
+  totalElement.textContent = "Total: ₹" + total;
 }
 
-// INCREASE OR DECREASE QUANTITY
+// CHANGE QUANTITY
 
-function changeQuantity(id, amount) {
+function changeQuantity(index, amount) {
 
-    let item = cart.find(p => p.id === id);
+  cart[index].quantity += amount;
 
-    if(!item) return;
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1);
+  }
 
-    item.quantity += amount;
-
-    if(item.quantity <= 0) {
-
-        cart = cart.filter(p => p.id !== id);
-
-    }
-
-    saveCart();
+  saveCart();
 }
 
-// PAGE NAVIGATION
+// NAVIGATION
 
 function showPage(page) {
 
-    document.querySelectorAll(".page")
-    .forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".page").forEach(section => {
+    section.classList.remove("active");
+  });
 
-    document.getElementById(page)
-    .classList.add("active");
+  document.getElementById(page).classList.add("active");
 
-    if(page === "cart") {
-        displayCart();
-    }
+  if (page === "cart") {
+    displayCart();
+  }
 
-    window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
 }
 
-// BUY BUTTON
+// BUY NOW - DEMO BUTTON
 
 function buyNow() {
 
-    if(cart.length === 0) {
+  if (cart.length === 0) {
+    alert("Your cart is empty! Please add a product first.");
+    return;
+  }
 
-        alert("Your cart is empty!");
-
-        return;
-    }
-
-    alert(
-        "Thank you for shopping with PURE LEAF! 🌿\n\n" +
-        "Your demo order has been placed."
-    );
-
-    cart = [];
-
-    saveCart();
-
-    showPage("home");
+  alert("Thank you for shopping with PURE LEAF! This is a demo website. Online payments are not connected yet.");
 }
 
 // START WEBSITE
