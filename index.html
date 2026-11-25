@@ -667,7 +667,54 @@ function updateCartCount() {
 
 // DISPLAY CART
 
+
 function displayCart() {
+  const container = document.getElementById("cartItems");
+  const totalElement = document.getElementById("cartTotal");
+
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="empty">
+        <h2>Your cart is empty!</h2>
+        <p>Add some PURE LEAF products to get started.</p>
+      </div>
+    `;
+    totalElement.textContent = "Total: ₹0";
+    return;
+  }
+
+  let total = 0;
+
+  container.innerHTML = cart.map((item, index) => {
+    total += item.price * item.quantity;
+
+    return `
+      <div class="cart-item">
+        <div>
+          <h3>${item.name}</h3>
+          <p>₹${item.price} each</p>
+        </div>
+
+        <div class="quantity">
+          <button onclick="changeQuantity(${index}, -1)">−</button>
+          <strong>${item.quantity}</strong>
+          <button onclick="changeQuantity(${index}, 1)">+</button>
+        </div>
+
+        <strong>₹${item.price * item.quantity}</strong>
+
+        <button
+          onclick="deleteProduct(${index})"
+          style="background:#ffe6e6;color:#c62828;border:none;border-radius:20px;padding:9px 15px;cursor:pointer;font-weight:bold;">
+          🗑 Delete
+        </button>
+      </div>
+    `;
+  }).join("");
+
+  totalElement.textContent = "Total: ₹" + total;
+}
+
 
   const container = document.getElementById("cartItems");
   const totalElement = document.getElementById("cartTotal");
@@ -725,6 +772,16 @@ function displayCart() {
 }
 
 // CHANGE QUANTITY
+
+
+function deleteProduct(index) {
+  const productName = cart[index].name;
+
+  if (confirm("Are you sure you want to delete " + productName + " from your cart?")) {
+    cart.splice(index, 1);
+    saveCart();
+  }
+}
 
 function changeQuantity(index, amount) {
 
